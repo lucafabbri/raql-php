@@ -23,8 +23,13 @@ class MyModel extends Model{
 Call the .raql($query) Query Builder extension method
 
 ```PHP
-$query = "(field1 like 'name' or field1 = 'mario') and field2 >=10
-
-MyModel::raql($query)->get();
+class Controller extends BaseController
+{
+function queryMyModel()
+{
+$query = "(field1 like 'name' or field1 = 'mario') and field2 >=10";
+return MyModel::raql($query)->get();
+}
+}
 
 ```
